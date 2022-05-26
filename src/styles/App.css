@@ -1,0 +1,121 @@
+.background {
+  text-align: center;
+  animation: bg-zoom 10s ease-out both;
+  position: fixed;
+  width: -webkit-fill-available;
+  bottom: 0;
+  top: -1em;
+  z-index: -10;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  display: flex;
+}
+
+.logo h1, .logo span {
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 34px;
+  letter-spacing: 4px;
+  color: #64EEBC;
+  letter-spacing: 5px;
+}
+.logo h1 {
+  font-family: "Bebas Neue Bold";
+  margin: 0;
+}
+.logo span {
+  font-family: "Bebas Neue Regular";
+  font-weight: 100;
+}
+
+.logo {
+  position: fixed;
+  top: 2em;
+  left: 5em;
+  animation: fade-bottom 0.5s linear 1s both;
+  display: flex;
+  align-items: baseline;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes bg-zoom {
+  0% {
+    transform: scale(1.25) translateY(0);
+    transform-origin: 50% 84%;
+  }
+  100% {
+    transform: scale(1) translateY(15px);
+    transform-origin: bottom;
+  }
+}
+@keyframes fade-bottom {
+  0% {
+    top: 3em;
+    opacity: 0;
+  }
+  100% {
+    top: 2em;
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 920px) {
+  .App:before {
+    content: "";
+    background-image: linear-gradient(180deg, rgba(36, 36, 36, 0) 0%, #242424 100%);
+    position: absolute;
+    height: 100px;
+    width: 38em;
+    right: 0;
+    bottom: 32em;
+    left: 0;
+  }
+
+  .background {
+    position: absolute;
+    height: 25em;
+    top: -1em;
+    width: 46em;
+    left: -7em;
+  }
+
+  body {
+    height: 150em;
+    overflow: visible;
+    background-color: #242424;
+  }
+
+  .logo {
+    left: 13em;
+    margin-top: 15px;
+    position: absolute;
+    z-index: 50;
+  }
+  .logo h1, .logo span {
+    font-size: 28px;
+  }
+}
+
+/*# sourceMappingURL=App.css.map */

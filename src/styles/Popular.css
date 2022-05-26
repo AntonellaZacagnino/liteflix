@@ -1,0 +1,243 @@
+.item img {
+  width: 263px;
+  height: 146px;
+}
+
+.popularsContainer {
+  position: absolute;
+  top: 9em;
+  right: 10em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 40;
+}
+
+.order {
+  color: white;
+  display: flex;
+  align-items: center;
+  position: relative;
+  animation: fade-from-bottom 1s cubic-bezier(0.39, 0.575, 0.565, 1) 1.5s both;
+}
+.order .text {
+  font-size: 18px;
+  font-weight: normal;
+  font-family: "Bebas Neue Light";
+  letter-spacing: 4px;
+}
+.order .text ~ span strong {
+  font-family: "Bebas Neue Bold";
+}
+.order span {
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.item {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Bebas Neue Regular";
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.item .title {
+  font-size: 16px;
+  position: absolute;
+  margin-top: 7em;
+  z-index: 5;
+}
+
+.item:hover img {
+  filter: brightness(0.5);
+}
+.item:hover .icons {
+  cursor: pointer;
+  animation: move-from-top 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  filter: contrast(0.8);
+}
+.item:hover .icons:hover {
+  color: #242424;
+  fill: 1;
+}
+.item:hover .icons:hover span {
+  background-color: #64EEBC;
+  border: 2px solid #242424;
+}
+.item:hover .title {
+  bottom: 3.5em;
+  left: 4.5em;
+  animation: tracking-in-contract 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+.item:hover .info {
+  animation: fade-info 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+.item752623 {
+  animation: fade-from-bottom cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s 1.5s both;
+}
+
+.item526896 {
+  animation: fade-from-bottom 0.5s 2s both;
+}
+
+.item639933 {
+  animation: fade-from-bottom cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s 2.5s both;
+}
+
+.item675353 {
+  animation: fade-from-bottom cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s 3s both;
+}
+
+.icons {
+  position: absolute;
+  color: white;
+  top: 2.6em;
+  z-index: 2;
+}
+.icons span {
+  border: 1px solid white;
+  font-size: 40px;
+  border-radius: 25px;
+  background-color: rgba(36, 36, 36, 0.5);
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 6.2em;
+  opacity: 0;
+}
+.info .year {
+  margin-left: 8em;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+
+@keyframes fade-from-bottom {
+  0% {
+    top: 1em;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes move-from-top {
+  0% {
+    top: 1.5em;
+    left: 1em;
+    opacity: 0;
+  }
+  100% {
+    top: 3.5em;
+    left: 1em;
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1px;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: 4px;
+    opacity: 1;
+  }
+}
+@keyframes fade-info {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 920px) {
+  .popularsContainer {
+    top: 35em;
+    left: 17em;
+  }
+
+  .order {
+    width: 12em;
+    left: 2em;
+  }
+
+  .item {
+    margin-bottom: 30px;
+  }
+  .item img {
+    width: 32em;
+    height: 19em;
+    border-radius: 1em;
+  }
+  .item .title {
+    font-size: 24px;
+    margin-top: 10em;
+  }
+  .item span {
+    font-size: 5em;
+    border-radius: 1em;
+    margin-top: 0.5em;
+  }
+
+  .item:hover .title {
+    bottom: 5.5em;
+    left: 5.5em;
+  }
+
+  .item:hover .icons span {
+    font-size: 3em;
+    margin-top: 1.6em;
+    margin-left: 0.5em;
+    background-color: #64EEBC;
+    border-color: #242424;
+    color: #242424;
+  }
+
+  .info {
+    top: 14em;
+  }
+  .info span {
+    font-size: 4em;
+    margin-top: 0;
+  }
+  .info p {
+    font-size: 25px;
+  }
+}
+
+/*# sourceMappingURL=Popular.css.map */

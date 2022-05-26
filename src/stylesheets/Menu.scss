@@ -1,0 +1,516 @@
+.menu{
+  position: fixed;
+  z-index: 30;
+  top: 2em;
+  right: 7em;
+  display: flex;
+  align-items: center;
+  color: white;
+  animation: fade-bottom .5s linear 1s both;
+  #notifications,img{ 
+    cursor: pointer;
+    margin: 0 20px ;
+    z-index: 32;
+  }
+  #notifications:hover{
+    color:#64EEBC;
+  }
+  img:hover{
+    filter: opacity(.5);
+  }
+  #notifications{
+    font-size: 35px;
+  }
+}
+  
+.alert{
+  height: 13px;
+  width: 13px;
+  position: absolute;
+  left: 1.4em;
+  top:0.1em;
+  z-index: 33;
+  background-color: #64EEBC;
+  border-radius: 10px
+}
+
+.toggle-menu {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  z-index: 20;
+}
+  
+.toggle-menu i {
+  position: absolute;
+  display: block;
+  height: 2px;
+  background: white;
+  width: 30px;
+  left: 0px;
+}
+
+.toggle-menu.active{
+  left: 5em;
+}
+
+.toggle-menu:hover i{
+  background-color: #64EEBC;
+}
+
+.toggle-menu i:nth-child(1) {
+  top: 16px;
+  width: 15px;
+  left: 15px;
+}
+
+.toggle-menu i:nth-child(2) {
+  top: 24px;
+  width: 22px;
+  left: 8px;
+}
+
+.toggle-menu i:nth-child(3) {
+  top: 32px;
+}
+  
+.toggle-menu.active i:nth-child(1) {
+  top: 1.5em;
+  width: 30px;
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+  animation: visibility 1s linear .2s both;
+}
+
+.toggle-menu.active i:nth-child(2) {
+  background: transparent;
+}
+
+.toggle-menu.active i:nth-child(3) {
+  top: 1.5em;
+  width: 30px;
+  animation: visibility 1s linear .2s both;
+  left: 0.8em;
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+}
+
+.menu-container {
+  position: absolute;
+  overflow: hidden;
+  height: 60em;
+  width: 50em;
+  top: -2.2em;
+  right: -7em;
+  a{
+    color: white;
+    top:2em;
+    left: 30em;
+  }
+}
+
+.toggle-menu.active a{
+  a{
+    left: 4.5em;
+  } 
+}
+
+.menu-drawer {
+  width: 40em;
+  background-color: rgb(36, 36, 36);
+  height: 900px;
+  position: absolute;
+  right: -50em;
+  top: 0;
+  transition: right linear .2s;
+  padding: 50px;
+}
+
+.open {
+  right: 0px;
+  transition: right linear .2s;
+}
+
+.menu-drawer {
+  .menu-list{
+    list-style: none;
+    margin-top:5em;
+    .agregar{
+      margin-top: 2.5em;
+      a{
+        display: flex;
+        align-items: center;
+      }
+      #icon{
+        margin: 0;
+        font-size: 22px;
+        margin-right: 10px;
+      }
+    }
+    .list-item {
+        
+      font-family: 'Bebas Neue Light';
+      margin: 30px 0;
+      font-size: 22px;
+      letter-spacing: 4px;
+      a {
+        text-decoration: none;
+        color: white;
+        &:hover {
+          color: #bdbaba;
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed; 
+  z-index: 100; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-container {
+  background-color: #242424;
+  width: 730px;
+  height: 440px;
+  margin: 15% auto; 
+  padding: 20px;
+  border: none;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  .close{
+  font-size: 4em;
+  }
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-weight: bold;
+  position: relative;
+  bottom: 25px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.new-image-input{
+  display: none;
+}
+
+.new-image{
+  cursor: pointer;
+}
+
+.upload{
+  display: flex;
+  font-size: 16px;
+  align-items: center;
+  border: 1px white;
+  border-style: dashed;
+  padding:25px;
+  p{
+    font-family: 'Bebas Neue Regular';
+  }
+}
+
+.title-name{
+  .title{
+    border: none;
+    background: none;
+    text-align: center;
+    border-bottom: 1px solid;
+    font-size: 16px;
+    font-family: 'Bebas Neue Regular';
+    letter-spacing: 4px;
+    color: white;
+    padding-bottom: 7px;
+  }
+  position: absolute;
+  top:24.5em;
+}
+
+  .upload-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+  .content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .add-movie{
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: normal;
+    font-family: 'Bebas Neue Regular';
+    color: #64EEBC;
+  }
+}
+
+.submit, .continue, .homeBtn{
+  border: none;
+  background-color: #919191;
+  font-family: 'Bebas Neue Regular';
+  letter-spacing: 4px;
+  color: #242424;
+  font-size: 18px;
+  position: absolute;
+  width: 13em;
+  height: 3.6em;
+}
+
+.submit,.continue{
+  top: 35em;        
+  left: 42.5em;
+}  
+
+.homeBtn{
+  top: 10em;
+  left: 11em;
+}
+
+.submit:hover, .continue:hover, .homeBtn:hover{
+  background-color: white;
+  cursor: pointer;
+}
+
+.progress{
+  position: absolute;
+  bottom: 21.5em;
+  width: 34%;
+  .percent{
+    font-size: 16px;
+    letter-spacing: 4px;
+    font-family: 'Bebas Neue Regular';
+    top: 1px;
+  }
+}
+
+#progress-bar {
+  width: 100%;
+  height: 4px;
+  margin-top: 16px;
+  padding-top: 1px;
+  background-color: grey;
+}
+
+#progress-bar-inner {
+  width: 1%;
+  height: 30px;
+  background-color: #64EEBC;
+  margin-top: -12px;
+}
+
+.cancel{
+  font-size: 18px;
+  font-family: 'Bebas Neue Bold';
+  letter-spacing: 4px;
+  position: absolute;
+  top: 5em;
+  left: 29em;
+}
+
+.final-screen{
+  text-align: center;
+  .line1{
+    color:#64EEBC;
+    font-size: 34px ;
+    letter-spacing: 4px;
+    position: absolute;
+    bottom: 3em;
+    left: 7em;
+    strong{
+      font-family: 'Bebas Neue Bold';
+    }
+  }
+  .line2{
+    margin: 0;
+    font-size: 24px ;
+    font-family: 'Bebas Neue Bold';
+    letter-spacing: 4px;
+    position: absolute;
+    bottom: 0em;
+    left: 9em;
+  }
+  .line3{
+    letter-spacing: 4px;
+    font-size: 20px;
+    margin: 0;
+    position: absolute;
+    width: 30em;
+    top: 6em;
+    left: 0em;
+  }
+}
+
+@keyframes visibility {
+  0%{
+  visibility: hidden;
+  }
+  100%{
+  visibility: visible;
+  }
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@media only screen and (max-width: 920px){
+
+  #notifications, .alert{
+    display: none;
+  }
+  .menu{
+    position: absolute;
+    right: -7em;
+  }
+  .menu img{
+    width: 3em;
+    z-index: 110;
+    margin:10px -45px 0 0 ;
+  }
+
+  .toggle-menu{
+    z-index: 110;
+    margin-left: -18em;
+    margin-top: 1em;
+    transform: rotateZ(180deg);
+  }
+
+  .toggle-menu.active{
+    left: 29em;
+    top: 1em;
+    transform: rotateX(180deg);
+  }
+
+  .toggle-menu.active i:nth-child(1){
+    left: 13px;
+    top: 1.5em;
+    transform: none;
+  }
+
+  .toggle-menu.active i:nth-child(2){
+    background-color: #64EEBC;
+    top: 8px;
+    left: 13px;
+    width: 14px;
+  }
+
+  .toggle-menu.active i:nth-child(3){
+    transform: none;
+    top: 1em;
+    width: 23px;
+  }
+
+  .menu-container{
+    height: 150em;
+  }
+
+  .menu-drawer{
+    width: 35em;
+    height: 150em;
+    .menu-list{
+      .list-item{
+        margin: 55px 0;
+      }
+    }
+  }
+  .modal-container{
+    height: 43em;
+    width: 28em;
+    margin-top: 0;
+  }
+
+  .modal-container .close{
+    font-size: 0;
+  }
+
+  .close::before{
+    content: "Salir";
+    font-size: 18px;
+    border: 1px solid white;
+    padding: 20px 5em;
+    position: absolute;
+    top: 40em;
+    right: 12em;
+  }
+
+  .content .add-movie{
+    margin-top: 6em;
+    margin-right: 1em;
+    font-size: 22px;
+  }
+  .upload p{
+    font-size: 0;
+  }
+
+  .upload{
+    padding: 50px 30px;
+  }
+  
+  .submit, .continue{
+    left: 10.5em;
+  }
+
+  .upload p:before{
+    font-size:16px;
+    content: 'Agrega un archivo';
+    margin-left:45px
+  }
+
+  .title-name{
+    top: 21em;
+    .title{
+      font-size: 18px;
+      width: 20em;
+    }
+  }
+
+  .progress{
+  bottom: 50.5em;
+  width: 22em;
+    .cancel{
+      left: 22em;
+      top: 4em;
+    }
+  }
+
+  .homeBtn{
+    top: 23em;
+    left: 5.5em;
+    width: 13em;
+    height: 3.6em;
+  }
+
+  .final-screen{
+    .line1{
+      display: none;
+    } 
+    .line2{
+      left: 4.5em;
+      font-size: 28px;
+    }
+    .line3{
+      font-size: 24px;
+      left: -5em;
+    }
+  }
+}
